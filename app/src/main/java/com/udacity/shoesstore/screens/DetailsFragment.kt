@@ -22,6 +22,7 @@ class DetailsFragment : Fragment() {
 
     // here we use this a configuration to share data between fragment
 
+   var shoe= Shoe(name="", size =0.0,company="",description="")
     private val storeViewModel: StoreViewModel by activityViewModels()
 
     private lateinit var binding:FragmentDetailsBinding
@@ -37,7 +38,7 @@ class DetailsFragment : Fragment() {
                 false
         )
 
-        binding.shoe=Shoe(name="", size =0.0,company="",description="")
+        binding.shoe=shoe
 
         binding.viewModel=storeViewModel
         binding.setLifecycleOwner(this)
@@ -57,12 +58,12 @@ class DetailsFragment : Fragment() {
         binding.saveId.setOnClickListener {
             val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(view?.windowToken, 0)
-            binding.shoe.name=binding.editTextTextName.text.toString().trim()
-            binding.shoe.company=binding.editTextTextCompany.text.toString().trim()
-           binding.shoe.size=binding.editTextTextSize.text.toString().trim().toDouble()
-           binding.shoe.description=binding.editTextTextDescription.text.toString().trim()
+            shoe.name=binding.editTextTextName.text.toString().trim()
+            shoe.company=binding.editTextTextCompany.text.toString().trim()
+           shoe.size=binding.editTextTextSize.text.toString().trim().toDouble()
+          shoe.description=binding.editTextTextDescription.text.toString().trim()
 
-            storeViewModel.addShoe(binding.shoe)
+            storeViewModel.addShoe(shoe)
 
         }
 
