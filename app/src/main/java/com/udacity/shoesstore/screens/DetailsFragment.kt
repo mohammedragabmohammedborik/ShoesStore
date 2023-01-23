@@ -54,17 +54,17 @@ class DetailsFragment : Fragment() {
             val action=DetailsFragmentDirections.actionDetailsFragmentToListFragment()
             findNavController().navigate(action)
         }
-//        binding.saveId.setOnClickListener {
-//            val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            imm.hideSoftInputFromWindow(view?.windowToken, 0)
-//            val name=binding.editTextTextName.text.toString().trim()
-//            val  company=binding.editTextTextCompany.text.toString().trim()
-//            val size=binding.editTextTextSize.text.toString().trim()?:"0"
-//            val description=binding.editTextTextDescription.text.toString().trim()
-//
-//            storeViewModel.addShoe(Shoe(name=name, size = size.toDouble(),company=company,description=description))
-//
-//        }
+        binding.saveId.setOnClickListener {
+            val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view?.windowToken, 0)
+            binding.shoe.name=binding.editTextTextName.text.toString().trim()
+            binding.shoe.company=binding.editTextTextCompany.text.toString().trim()
+           binding.shoe.size=binding.editTextTextSize.text.toString().trim().toDouble()
+           binding.shoe.description=binding.editTextTextDescription.text.toString().trim()
+
+            storeViewModel.addShoe(binding.shoe)
+
+        }
 
 
         return binding.root
