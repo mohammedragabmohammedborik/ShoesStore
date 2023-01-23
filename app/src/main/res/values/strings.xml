@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Shoes Store</string>
+    <string name="password_text">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="either">Either</string>
+    <string name="welcome_in_shoes_store">Welcome in Shoes Store</string>
+    <string name="welcome_description">in Shoes Store here you find all and beautiful products with more offers  </string>
+    <string name="next">Next</string>
+    <string name="step1">STEP1</string>
+    <string name="got_to_home_list">got to home list</string>
+    <string name="step2">STEP2</string>
+    <string name="got_to_details_to_add_a_product_to_a_list">got to details to add a product to a list</string>
+    <string name="go_to_list">Go to List</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="size">Size</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="log_out">Log Out</string>
+
+
+</resources>

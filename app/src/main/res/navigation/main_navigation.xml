@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--// here i use navigation graph  -->
+<!--i have five fragment screen-->
+<!-- - destination fragment is LoginFragment -->
+<!-- -then can go WelcomeFragment then  InstructionFragment-->
+<!-- - we can navigate form ListFragment  -->
+<!-- - and from ListFragment can navigate to DetailsFragment-->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/fragment_login"
+
+    >
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="com.udacity.shoesstore.screens.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_fragment_login_to_fragment_welcome"
+            app:destination="@id/fragment_welcome" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_welcome"
+        android:name="com.udacity.shoesstore.screens.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+
+        <action
+            android:id="@+id/action_fragment_welcome_to_instructionFragment"
+            app:destination="@id/instructionFragment"
+            app:popUpTo="@id/fragment_welcome"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionFragment"
+        android:name="com.udacity.shoesstore.screens.InstructionFragment"
+        android:label="InstructionFragment"
+        tools:layout="@layout/fragment_instructions"
+
+        >
+        <action
+            android:id="@+id/action_instructionFragment_to_listFragment"
+            app:destination="@id/listFragment"
+
+            app:popUpTo="@id/instructionFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.udacity.shoesstore.screens.ListFragment"
+        android:label="ListFragment"
+        tools:layout="@layout/fragment_list"
+
+        >
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.udacity.shoesstore.screens.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details"
+        >
+        <action
+            android:id="@+id/action_detailsFragment_to_listFragment"
+            app:destination="@id/listFragment"
+            app:popUpTo="@id/listFragment"
+            />
+    </fragment>
+</navigation>
