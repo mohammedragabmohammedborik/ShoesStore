@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--this is a text view that i will add it to linear layout view in fragment list-->
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
 

@@ -46,6 +46,7 @@ class ListFragment : Fragment() {
 
         val menuHost: MenuHost = requireActivity()
 
+        // i used  addMenuProvider   instead of setHasOptionsMenu(true)
         // Add menu items without using the Fragment Menu APIs
         // Note how we can tie the MenuProvider to the viewLifecycleOwner
         // and an optional Lifecycle.State (here, RESUMED) to indicate when
@@ -58,6 +59,7 @@ class ListFragment : Fragment() {
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 // Handle the menu selection
+                // here i integrate menu with navigation ui
                 return NavigationUI.onNavDestinationSelected(menuItem, requireView().findNavController())
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)

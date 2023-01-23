@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--fragment welcome have a 2 text and button for navigate to instruction fragment-->
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     >
 
 <androidx.constraintlayout.widget.ConstraintLayout
