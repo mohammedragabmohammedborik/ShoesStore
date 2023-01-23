@@ -31,9 +31,6 @@ class StoreViewModel() : ViewModel() {
     val shoeList: LiveData<List<Shoe>>
         get() = _shoeList
 
-    private val _score = MutableLiveData<Int>()
-    val score: LiveData<Int>
-        get() = _score
 
     fun addShoe(shoe:Shoe) {
         Timber.d(shoe.company)

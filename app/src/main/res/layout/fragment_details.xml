@@ -5,7 +5,16 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     >
+    <data>
+        <variable
+            name="shoe"
+            type="com.udacity.shoesstore.models.Shoe"/>
+        <variable
+            name="viewModel"
+            type="com.udacity.shoesstore.screens.StoreViewModel" />
+    </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -31,6 +40,7 @@
         android:layout_marginEnd="16dp"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:text="@={shoe.name}"
         android:hint="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +62,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:minHeight="48dp"
+        android:text="@={shoe.company}"
 
         android:layout_marginEnd="16dp"
         android:inputType="textPersonName"
@@ -76,7 +87,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:minHeight="48dp"
-
+        android:text='@={""+shoe.size}'
         android:layout_marginEnd="16dp"
         android:inputType="number"
         android:hint="@string/size"
@@ -99,6 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:minHeight="48dp"
+        android:text="@={shoe.description}"
 
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -114,6 +126,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:onClick="@{()-> viewModel.addShoe(shoe)}"
+
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -37,6 +37,9 @@ class DetailsFragment : Fragment() {
                 false
         )
 
+        binding.shoe=Shoe(name="", size =0.0,company="",description="")
+
+        binding.viewModel=storeViewModel
         binding.setLifecycleOwner(this)
         // cancel button to popstack to List Fragment
         binding.cancelId.setOnClickListener {
@@ -47,18 +50,21 @@ class DetailsFragment : Fragment() {
             findNavController().navigate(action)
         }
 
-        binding.saveId.setOnClickListener {
-            val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view?.windowToken, 0)
-            val name=binding.editTextTextName.text.toString().trim()
-            val  company=binding.editTextTextCompany.text.toString().trim()
-            val size=binding.editTextTextSize.text.toString().trim()?:"0"
-            val description=binding.editTextTextDescription.text.toString().trim()
-
-            storeViewModel.addShoe(Shoe(name=name, size = size.toDouble(),company=company,description=description))
+        storeViewModel.shoeList.observe(requireActivity()){
             val action=DetailsFragmentDirections.actionDetailsFragmentToListFragment()
-           findNavController().popBackStack()
+            findNavController().navigate(action)
         }
+//        binding.saveId.setOnClickListener {
+//            val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//            imm.hideSoftInputFromWindow(view?.windowToken, 0)
+//            val name=binding.editTextTextName.text.toString().trim()
+//            val  company=binding.editTextTextCompany.text.toString().trim()
+//            val size=binding.editTextTextSize.text.toString().trim()?:"0"
+//            val description=binding.editTextTextDescription.text.toString().trim()
+//
+//            storeViewModel.addShoe(Shoe(name=name, size = size.toDouble(),company=company,description=description))
+//
+//        }
 
 
         return binding.root
