@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/horizontal_margin"
         android:layout_marginTop="@dimen/vertical_margin"
-        android:text="@string/welcome_in_shoes_store"
+        android:text="@string/welcome_description"
         android:textColor="@color/gray"
         android:textSize="@dimen/description_text_size"
         app:layout_constraintEnd_toEndOf="parent"
